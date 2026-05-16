@@ -414,7 +414,7 @@ body {
 
 /* ContentBox */
 #contentArea {
-  overflow: hidden;
+  // overflow: hidden;  
 }
 
 .banner {
@@ -3311,12 +3311,12 @@ body {
   background-color: #ececec;
   background-position: center;
   background-size: cover;
-  height: auto;
+  height: 100%;
 
   @include md-min {
     padding-top: 200px;
     padding-bottom: 100px;
-    height: 100vh;
+    // height: 100vh;
   }
 
   @include xl-min {
@@ -3440,7 +3440,7 @@ body {
         margin-bottom: 15px;
 
         @include lg-min {
-          padding: 24px 30px;
+          // padding: 24px 30px;
           margin-bottom: 28px;
         }
       }
@@ -3558,12 +3558,12 @@ body {
   background-color: #ececec;
   background-position: center;
   background-size: cover;
-  height: auto;
+  height: 100%;
 
   @include md-min {
     padding-top: 160px;
     padding-bottom: 80px;
-    height: 100vh;
+    // height: 100vh;
   }
 
 
@@ -3695,7 +3695,7 @@ body {
         margin-bottom: 15px;
 
         @include lg-min {
-          padding: 24px 30px;
+          // padding: 24px 30px;
           margin-bottom: 28px;
         }
       }
