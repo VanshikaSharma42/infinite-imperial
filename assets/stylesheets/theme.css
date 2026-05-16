@@ -900,6 +900,10 @@ body {
 }
 
 /* ContentBox */
+#contentArea {
+  overflow: hidden;
+}
+
 .banner {
   background: url(../images/bannerImg1.png);
   padding-top: 140px;
