@@ -1,0 +1,36 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../vendors/bootstrap/min-media-breakpoints' as *;
+// blockquote //
+blockquote {
+	margin: 12px 0 12px 20px;
+	position: relative;
+	padding: 10px 60px 10px 30px;
+	font-size: 16px;
+	line-height: 1.5;
+	&:before { 
+		top: 6px;
+		left: 0;
+		content: '“';
+	}
+	&:after {
+		bottom: 0;
+		right: 0;
+		content: '”';
+	}
+	&:before, 
+	&:after {
+		position: absolute;
+		width: 60px;
+		color: #133C43;
+		height: 60px;
+		font-size: 60px;
+		line-height: 1;
+	}
+	@include lg-min{
+		font-size: 18px;
+	}
+	@include xxl-min{
+		font-size: 20px;
+	}
+}

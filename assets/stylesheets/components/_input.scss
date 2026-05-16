@@ -1,0 +1,198 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../vendors/bootstrap/min-media-breakpoints' as *;
+
+// Input Field //
+.form-control {
+  border-radius: 8px;
+  background-color: #161616;
+  border: 1px solid var(--bs-border) !important;
+  color: var(--bs-white) !important;
+  backdrop-filter: blur(30px);
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  padding: 16px 18px;
+  height: 40px;
+  text-transform: capitalize;
+
+  @include lg-min {
+    border-radius: 8px;
+    height: 44px;
+  }
+
+  @include custom-min($desktop-min-1800) {
+    height: 50px;
+  }
+
+  &::-webkit-input-placeholder {
+    color: var(--bs-white);
+  }
+
+  &:-moz-placeholder {
+    color: var(--bs-white);
+  }
+
+  &::-moz-placeholder {
+    color: var(--bs-white);
+  }
+
+  &:-ms-input-placeholder {
+    color: var(--bs-white);
+  }
+
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+    background-color: #F0F0F066;
+  }
+
+  @include custom-min($desktop-min-1700) {
+    font-size: 12px;
+  }
+}
+
+select {
+  background-color: #F0F0F066 !important;
+  color: #fff;
+
+  &:focus {
+    border: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: var(--bs-white);
+  }
+
+  .option[disabled] {
+    color: white;
+  }
+}
+
+
+// Custom Select //
+.custom-select {
+  background: url('../images/select-arrow.svg') calc(100% - 20px) center no-repeat;
+  background-size: 14px auto;
+  background-color: #161616 !important;
+  color: var(--bs-white) !important;
+  background-color: #00000066;
+  backdrop-filter: blur(8.121967315673828px);
+  box-shadow: 0px 0px 24.98px 0px #FFFFFF26 inset;
+  --bs-btn-active-bg: none;
+  border: 1px solid var(--bs-border);
+  padding: 16px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  option {
+     white-space: pre-line;
+  }
+
+  * {
+    color: var(--bs-gray);
+  }
+
+  &:focus {
+    background: url('../images/select-arrow.svg') calc(100% - 15px) center no-repeat;
+    background-size: 14px auto;
+    background-color: #F0F0F066 !important;
+    color: var(--bs-white);
+    outline: 0;
+    box-shadow: none;
+    border: none;
+    -webkit-focus-ring-color: none !important;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error {
+  position: relative;
+  color: #ff907d;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea.form-control {
+  min-height: 123px;
+  padding-top: 10px;
+}
+
+// radio button css
+
+.radio-box {
+  background-color: #161616 !important;
+  color: var(--bs-white) !important;
+  background-color: #00000066;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 0px 24px 0px #FFFFFF26 inset;
+  border: 1px solid var(--bs-border);
+  padding: 9px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  gap: 12px;
+}
+
+.radio-box .form-check-input {
+  display: none;
+}
+
+
+.radio-box .radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--bs-white);
+  transition: 0.25s ease;
+}
+
+/* ACTIVE tab (checked) */
+.radio-box .form-check-input:checked+.radio-label {
+  @include bgGradient;
+  color: var(--bs-black);
+}
+
+.buyIcon {
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D'15'%20height%3D'15'%20viewBox%3D'0%200%2015%2015'%20fill%3D'none'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M10.0833%204.75H6.08333C5.72971%204.75%205.39057%204.89048%205.14052%205.14052C4.89048%205.39057%204.75%205.72971%204.75%206.08333C4.75%206.43695%204.89048%206.77609%205.14052%207.02614C5.39057%207.27619%205.72971%207.41667%206.08333%207.41667H8.75C9.10362%207.41667%209.44276%207.55714%209.69281%207.80719C9.94286%208.05724%2010.0833%208.39638%2010.0833%208.75C10.0833%209.10362%209.94286%209.44276%209.69281%209.69281C9.44276%209.94286%209.10362%2010.0833%208.75%2010.0833H4.75M7.41667%2011.4167V3.41667M14.0833%207.41667C14.0833%2011.0986%2011.0986%2014.0833%207.41667%2014.0833C3.73477%2014.0833%200.75%2011.0986%200.75%207.41667C0.75%203.73477%203.73477%200.75%207.41667%200.75C11.0986%200.75%2014.0833%203.73477%2014.0833%207.41667Z'%20stroke%3D'white'%20stroke-width%3D'1.5'%20stroke-linejoin%3D'round'/%3E%3C/svg%3E");
+}
+
+
+.rentIcon {
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D'15'%20height%3D'14'%20viewBox%3D'0%200%2015%2014'%20fill%3D'none'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M9.75%204.19694L11.2833%205.73027C11.408%205.85243%2011.5755%205.92085%2011.75%205.92085C11.9245%205.92085%2012.092%205.85243%2012.2167%205.73027L13.6167%204.33027C13.7388%204.20565%2013.8072%204.03811%2013.8072%203.86361C13.8072%203.68911%2013.7388%203.52156%2013.6167%203.39694L12.0833%201.86361M13.4167%200.530273L7.01667%206.93027M8.08333%209.53027C8.08333%2011.5553%206.44171%2013.1969%204.41667%2013.1969C2.39162%2013.1969%200.75%2011.5553%200.75%209.53027C0.75%207.50523%202.39162%205.86361%204.41667%205.86361C6.44171%205.86361%208.08333%207.50523%208.08333%209.53027Z'%20stroke%3D'white'%20stroke-width%3D'1.5'%20stroke-linejoin%3D'round'/%3E%3C/svg%3E");
+}
+
+.radio-box .form-check-input:checked + .radio-label .rentIcon {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D'15'%20height%3D'14'%20viewBox%3D'0%200%2015%2014'%20fill%3D'none'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M9.75%204.19694L11.2833%205.73027C11.408%205.85243%2011.5755%205.92085%2011.75%205.92085C11.9245%205.92085%2012.092%205.85243%2012.2167%205.73027L13.6167%204.33027C13.7388%204.20565%2013.8072%204.03811%2013.8072%203.86361C13.8072%203.68911%2013.7388%203.52156%2013.6167%203.39694L12.0833%201.86361M13.4167%200.530273L7.01667%206.93027M8.08333%209.53027C8.08333%2011.5553%206.44171%2013.1969%204.41667%2013.1969C2.39162%2013.1969%200.75%2011.5553%200.75%209.53027C0.75%207.50523%202.39162%205.86361%204.41667%205.86361C6.44171%205.86361%208.08333%207.50523%208.08333%209.53027Z'%20stroke%3D'black'%20stroke-width%3D'1.5'%20stroke-linejoin%3D'round'/%3E%3C/svg%3E");
+}
+.radio-box .form-check-input:checked + .radio-label .buyIcon {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D'15'%20height%3D'15'%20viewBox%3D'0%200%2015%2015'%20fill%3D'none'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M10.0833%204.75H6.08333C5.72971%204.75%205.39057%204.89048%205.14052%205.14052C4.89048%205.39057%204.75%205.72971%204.75%206.08333C4.75%206.43695%204.89048%206.77609%205.14052%207.02614C5.39057%207.27619%205.72971%207.41667%206.08333%207.41667H8.75C9.10362%207.41667%209.44276%207.55714%209.69281%207.80719C9.94286%208.05724%2010.0833%208.39638%2010.0833%208.75C10.0833%209.10362%209.94286%209.44276%209.69281%209.69281C9.44276%209.94286%209.10362%2010.0833%208.75%2010.0833H4.75M7.41667%2011.4167V3.41667M14.0833%207.41667C14.0833%2011.0986%2011.0986%2014.0833%207.41667%2014.0833C3.73477%2014.0833%200.75%2011.0986%200.75%207.41667C0.75%203.73477%203.73477%200.75%207.41667%200.75C11.0986%200.75%2014.0833%203.73477%2014.0833%207.41667Z'%20stroke%3D'black'%20stroke-width%3D'1.5'%20stroke-linejoin%3D'round'/%3E%3C/svg%3E");
+}

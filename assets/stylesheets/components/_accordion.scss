@@ -1,0 +1,81 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../vendors/bootstrap/min-media-breakpoints' as *;
+
+// Global Accordion //
+.accordion {
+	--bs-accordion-btn-padding-x: 12px;
+	--bs-accordion-btn-padding-y: 23px;
+	border: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	@include lg-min {
+		--bs-accordion-btn-padding-x: 25px;
+	}
+
+	&-item {
+		border: 1px solid var(--bs-border) !important;
+		border-radius: 20px 12px 12px 12px !important;
+		box-shadow: 0px 0px 24.6px 0px #FFFFFF26 inset;
+		backdrop-filter: blur(8px);
+		background: linear-gradient(0deg, #000000, #000000);
+		margin-bottom: 20px;
+	}
+
+	&-button {
+		background-color: transparent !important;
+		--bs-accordion-active-color: #F0F0F0;
+		--bs-accordion-btn-color: #F0F0F0;
+		box-shadow: none !important;
+		font-size: 16px;
+		font-family: var(--bs-body-font-primary);
+		font-weight: 700;
+		font-style: Bold;
+		line-height: 28.43px;
+		margin-bottom: 12px;
+		color: #F0F0F0;
+		padding-bottom: 0;
+
+		@include lg-min {
+			font-size: 24px;
+		}
+
+		&:after {
+			display: none;
+		}
+
+		&::before {
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			right: 0;
+			content: '';
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12H19' stroke='%230E0C12' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			margin-right: 22px;
+
+			@include xl-min {
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&.collapsed {
+			&::before {
+				background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 5V19M5 12H19' stroke='%230E0C12' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			}
+		}
+	}
+
+	&-body {
+		padding-top: 0;
+		padding-left: 23px;
+		font-size: 16px;
+		font-weight: 500;
+		color: var(--bs-gray);
+	}
+}

@@ -1,0 +1,84 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 32px;
+}
+h3 {
+	font-size: 28px;
+}
+h4 {
+	font-size: 24px;
+}
+h5 {
+	font-size: 20px;
+}
+h6 {
+	font-size: 16px;
+}
+
+// Image with WP Hack //
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+    /*Wordpress Image Hack*/
+	&.alignleft {
+		float: left; 
+		margin: 15px 15px 15px 0;
+	}
+	&.aligncenter {
+		margin: 15px auto;
+		float: none;
+        display: block;
+	}
+	&.alignright {
+		float: right;
+		margin: 15px 0 15px 15px
+	}
+		
+}
+
+/**
+ * Basic styles for links
+ */
+a { 
+	color: var(--bs-black);
+	@include transition(0.3s);
+	&:hover, &:focus { 
+		color: var(--bs-black);
+        text-decoration: none;
+        outline: 0;
+	}
+}
+
+label {
+  cursor: pointer;
+}
+
+mark.d-inline-block {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  border-radius: 0;
+}

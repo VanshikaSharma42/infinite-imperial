@@ -1,0 +1,45 @@
+// box shadow mixin
+@mixin box-shadow($boxShadow) {
+-webkit-box-shadow: $boxShadow;
+    -moz-box-shadow: $boxShadow;
+        box-shadow: $boxShadow;
+}
+// border radius mixin
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+        border-radius: $radius;
+}
+// transition mixin
+@mixin transition($time) {
+-webkit-transition: (all $time ease-in-out);
+    -moz-transition: (all $time ease-in-out);
+    -ms-transition: (all $time ease-in-out);
+        -o-transition: (all $time ease-in-out);
+        transition: (all $time ease-in-out);
+}
+// rotate mixin
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg); /* WebKit */
+        -moz-transform: rotate($deg); /* Mozilla */
+        -o-transform: rotate($deg); /* Opera */
+        -ms-transform: rotate($deg); /* Internet Explorer */
+            transform: rotate($deg); /* CSS3 */
+}
+// input appearance mixin
+@mixin appearance {
+-webkit-appearance: none;
+    -moz-appearance: none;
+            appearance: none;
+}
+// UL,OL Default style remove
+@mixin liststyle {
+    list-style: none;
+    padding-left: 0;
+}
+@mixin liststyle1 {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}

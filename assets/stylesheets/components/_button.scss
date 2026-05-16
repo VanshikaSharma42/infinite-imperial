@@ -1,0 +1,123 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../vendors/bootstrap/min-media-breakpoints' as *;
+
+// btn override >>> //
+.btn {
+	--bs-btn-font-size: 16px;
+	--bs-btn-font-weight: 500;
+	--bs-btn-padding-x: 16px;
+	--bs-btn-padding-y: 24px;
+	--bs-btn-focus-box-shadow: none;
+	transition: all 0.3s ease-in-out;
+	font-size: 16px;
+
+	@include lg-min {
+		--bs-btn-padding-x: 31px;
+		--bs-btn-padding-y: 16px;
+	}
+}
+
+// btn-primary //
+.btn-primary {
+	border: 0;
+	color: var(--bs-black);
+	font-family: var(--bs-body-font-primary);
+	font-size: 16px;
+	@include bgGradient;
+	--bs-btn-active-bg: none;
+	border-color: transparent;
+	border-radius: 5px;
+	transition: all 0.3s ease-in-out;
+	font-weight: 700;
+	padding: 14px 28px;
+
+	&.active,
+	&:active,
+	&.focus,
+	&:focus,
+	&.active.focus,
+	&.active:focus,
+	&.active:hover,
+	&:active.focus,
+	&:active:focus,
+	&:active:hover {
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	&--dark {
+		font-family: var(--bs-body-font-primary);
+		background-color: #0B0B0B;
+		color: var(--bs-white);
+		--bs-btn-active-bg: none;
+		border: none;
+		border-radius: 8px;
+		transition: all 0.3s ease-in-out;
+		font-weight: 700;
+		padding: 12px 24px;
+		font-size: 16px;
+
+		&:hover {
+			color: var(--bs-black);
+			background-color: var(--bs-primary);
+			transform: scale(1.02);
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&--white {
+		background-color: var(--bs-white);
+		--bs-btn-active-bg: none;
+		border: 2px solid var(--bs-black);
+		box-shadow: 0px 3px 0px var(--bs-black);
+		padding-left: 59px;
+		padding-right: 59px;
+		color: var(--bs-black);
+
+		&:hover {
+			color: var(--bs-black);
+			transform: scale(1.02);
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		&:focus {
+			border: transparent;
+		}
+	}
+
+	&--outline {
+		font-family: var(--bs-body-font-primary);
+		background-color: #00000066;
+		backdrop-filter: blur(8.121967315673828px);
+		box-shadow: 0px 0px 24.98px 0px #FFFFFF26 inset;
+		--bs-btn-active-bg: none;
+		border: 1px solid var(--bs-border);
+		border-radius: 12px;
+		transition: all 0.3s ease-in-out;
+		font-weight: 700;
+		padding: 8px 11px;
+		@include textGradient;
+		font-size: 14px;
+		@include md-min {
+			padding: 16px 24px;
+			font-size: 16px;
+		}
+
+		&:hover {
+			color: var(--bs-black);
+			transform: scale(1.02);
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		&:active {
+			color: var(--bs-white) !important;
+			background-color: transparent !important;
+			border-color: transparent;
+		}
+	}
+}
+
+svg:hover {
+	color: var(--bs-white);
+}
